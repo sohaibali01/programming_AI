@@ -1,3 +1,6 @@
+# https://towardsdatascience.com/neural-net-from-scratch-using-numpy-71a31f6e3675
+# A simple neural network solver using numpy
+
 from sklearn import datasets
 from matplotlib import pyplot as plt
 import numpy as np
