@@ -66,7 +66,8 @@ A1 = np.tanh(Z1)
 Z2 = np.dot(W2,A1) + b2
 A2 = 1/(1 + np.exp(-Z2)) # Final output prediction
 
-print('Accuracy: %d' % float((np.dot(Y, A2.T) + np.dot(1-Y, 1-A2.T))/float(Y.size)*100)+'%')
+accuracy = float((np.dot(Y, A2.T) + np.dot(1-Y, 1-A2.T))/float(Y.size)*100)
+print('Accuracy: %d' %accuracy+'%')
 
 # now plot the predictions
 Y_hat = A2 > 0.5
@@ -75,5 +76,5 @@ fig, (ax1, ax2) = plt.subplots(1, 2)
 ax1.scatter(X[0, :], X[1, :], c=Y[0,:], s=40, cmap=plt.cm.Spectral)
 ax1.set_title('Original')
 ax2.scatter(X[0, :], X[1, :], c=Y_hat[0,:], s=40, cmap=plt.cm.Spectral)
-ax2.set_title('Predictions')
+ax2.set_title('Output - Accuracy: %d' %accuracy+'%')
 plt.show()
